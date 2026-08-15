@@ -6,6 +6,20 @@ This project follows a simple versioning scheme: `MAJOR.MINOR.PATCH`. Since this
 
 ---
 
+## [1.5.0] — Partial payments
+
+### Changed
+- **Replaced "Mark Settled" with per-entry partial payments.** The binary settled/unsettled toggle didn't reflect real repayment — loans are often paid back in chunks, not all at once.
+- Every entry now tracks a list of payments logged against it. An entry's **remaining balance** = original amount − sum of its payments, and this is what now feeds every total (overall summary, People view, person detail).
+- An entry **automatically becomes "Settled"** once its remaining balance hits 0 — no manual action needed. It stays visible in history (dimmed, struck-through, tagged) the same as before.
+- Entries with an outstanding balance show a progress bar and "PKR X of Y paid" once at least one payment has been logged.
+- Tap **"Add Payment"** on any entry to log a partial or full payment (amount + date). Tap **"View payments"** to see and remove individual payments logged against that entry.
+
+### Migration
+- Existing data from any prior version upgrades automatically — no action required. A previously "Settled" entry becomes fully paid (remaining 0); a previously unsettled entry keeps its full outstanding balance. This applies both to data already in your browser and to any old backup file you import.
+
+---
+
 ## [1.3.0] — Quick actions & import hardening
 
 ### Added
@@ -18,6 +32,8 @@ This project follows a simple versioning scheme: `MAJOR.MINOR.PATCH`. Since this
 ### Changed
 - Import now normalizes entries from **any** prior export format (bare array, wrapped object without `archived`, or the current schema) so old backups always import without errors
 - Archive status is now included in exports and restored on import (previously only entries were saved)
+
+> **Note (superseded in 1.5.0):** the "Mark Settled" toggle described above was replaced by partial payments in v1.5.0 — see above.
 
 ---
 
