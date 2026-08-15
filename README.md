@@ -14,10 +14,12 @@ Most "expense tracker" apps are bloated: accounts, ads, cloud sync you didn't as
 
 - Track **unlimited people** and their loans
 - Every entry is marked **Payable** (you owe them) or **Receivable** (they owe you)
-- Amounts in **PKR**, with description + date on every entry — nothing more
+- Amounts in **PKR**, with description + date on every entry
+- **Partial payments** — log a payment against any specific entry; its remaining balance updates automatically, and it settles itself once fully paid. No manual "mark as settled" needed.
 - **People view** — see every person's payable / receivable / net at a glance, tap in for their full history
+- **Search & sort** — find any entry or person by name, sort entries by date, amount, or name
 - **Archive** people once their net balance hits zero, without losing their history
-- **Export / Import** — one-tap backup to a real `.json` file on your device, and restore it anytime
+- **Export / Import** — one-tap backup to a real `.json` file on your device, and restore it anytime — old backups always import cleanly, even from earlier versions
 - All data lives in your browser's local storage — nothing leaves your device, ever
 
 ## How to use it
@@ -86,10 +88,13 @@ Guidelines to keep contributions in that spirit:
 | Area | Status |
 |---|---|
 | Core tracking (add/edit/delete) | Stable |
+| Partial payments & auto-settle | Stable |
 | People view + archive | Stable |
-| Export/Import backup | Stable |
+| Search & sort | Stable |
+| Export/Import backup (cross-version) | Stable |
 | Accessibility pass | Help wanted |
 | Test coverage | Help wanted |
+| Edit an existing entry in place | Help wanted |
 
 ## License
 
