@@ -6,7 +6,25 @@ This project follows a simple versioning scheme: `MAJOR.MINOR.PATCH`. Since this
 
 ---
 
-## [1.5.0] — Partial payments
+## [1.5.0] — Editable entries & UI cleanup
+
+### Added
+- **Tap any entry to edit it.** Opens the same form used to add an entry, pre-filled with its current type, name, amount, description, and date. Fix a typo or wrong amount in place instead of deleting and re-creating.
+- **Delete moved into the edit sheet** as a de-emphasized "Delete this entry" link, rather than a small tap target on the card. Fewer accidental deletes, and one less thing cluttering the card.
+- **Quick-add button was missing from the person detail page** — it's now next to Archive in the header, same as the person list cards.
+- **In-app "Are you sure?" confirmation** replaces the browser's native `confirm()` popup for deleting an entry or a logged payment. It matches the app's own styling, names exactly what's being deleted (e.g. "Ahmed — PKR 2,000"), and explains the consequence before you commit.
+
+### Fixed
+- Opening "Add Payment" or the edit sheet while viewing a person's detail page was silently blocked (the full-screen person view sat above the modal). Modals now correctly layer on top.
+- Adding a new entry via the person-detail quick-add button didn't refresh that detail view until you backed out and re-entered. It now updates immediately.
+
+### Design notes
+- The corner "×" delete button is gone entirely — tapping a card now has one job (edit), and destructive action lives one step deeper by design, matching how the rest of the app already handles risk (confirm dialogs, archive gating).
+- Added `aria-label`s to icon-only buttons for screen reader clarity.
+
+---
+
+## [1.4.0] — Partial payments
 
 ### Changed
 - **Replaced "Mark Settled" with per-entry partial payments.** The binary settled/unsettled toggle didn't reflect real repayment — loans are often paid back in chunks, not all at once.
