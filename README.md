@@ -15,6 +15,7 @@ Most "expense tracker" apps are bloated: accounts, ads, cloud sync you didn't as
 - Track **unlimited people** and their loans
 - Every entry is marked **Payable** (you owe them) or **Receivable** (they owe you)
 - Amounts in **PKR**, with description + date on every entry
+- **Tap any entry to edit it** — fix a wrong amount or typo in place, or delete it, without recreating it
 - **Partial payments** — log a payment against any specific entry; its remaining balance updates automatically, and it settles itself once fully paid. No manual "mark as settled" needed.
 - **People view** — see every person's payable / receivable / net at a glance, tap in for their full history
 - **Search & sort** — find any entry or person by name, sort entries by date, amount, or name
@@ -94,7 +95,6 @@ Guidelines to keep contributions in that spirit:
 | Export/Import backup (cross-version) | Stable |
 | Accessibility pass | Help wanted |
 | Test coverage | Help wanted |
-| Edit an existing entry in place | Help wanted |
 
 ## License
 
